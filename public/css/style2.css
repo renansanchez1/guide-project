@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fundo {
+    background-image: url('../img/ead1.png');
+    background-size: contain; /* A imagem será ajustada para caber dentro da div */
+    background-attachment: fixed; /* Fixa a imagem ao rolar */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    height: 120vh; /* Define a altura da div como a altura total da tela */
+    width: 100%; /* Garante que a largura ocupe toda a tela */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Cabeçalho */
+header{
+    height: 100px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header nav ul li {
+    margin-left: 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    height: 30vh;
+    background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.search-container {
+    text-align: center;
+}
+
+.search-input {
+    padding: 15px;
+    width: 600px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    margin-right: 10px;
+}
+
+.search-btn {
+    padding: 15px 25px;
+    background-color: #007C4E;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #00663D;
+}
+
+/* Categorias */
+/* Categorias */
+.categories {
+    padding: 60px 20px 20px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-family: "Chewy", serif;
+    font-size: 3rem;
+    color: rgb(37, 36, 36);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category-item {
+    text-decoration: none;
+    width: 250px;
+    height: 300px; /* Altura fixa para cada item de categoria */
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.category-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center; /* Alinha o título no centro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ocupa toda a largura do item */
+    height: 100%; /* Ocupa toda a altura do item */
+    display: flex;
+    flex-direction: column; /* Organiza título e parágrafo verticalmente */
+    justify-content: space-between; /* Espaço entre o título e o texto */
+}
+
+.category-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.category-box p {
+    font-size: 14px;
+    color: #666; /* Cor mais suave para o texto do resumo */
+    text-align: justify; /* Justifica o texto do resumo */
+    margin: 0; /* Remove margens extras */
+}
+
+.category-item:hover .category-box {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.category-box img {
+    width: 150px; /* Define o tamanho da imagem */
+    height: 100px; /* Garante que a imagem seja quadrada */
+    border: #00663D 1px solid;
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    margin: 10px auto; /* Espaçamento e centralização da imagem */
+    display: block; /* Alinha a imagem ao centro do card */
+    object-fit: cover; /* Ajusta a imagem para preencher o espaço sem distorção */
+}
+
+
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 1200px) {
+    .header .logo {
+        font-size: 22px;
+    }
+
+    .header nav ul li {
+        margin-left: 15px;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .search-input {
+        width: 500px;
+    }
+
+    .categories h2 {
+        font-size: 24px;
+    }
+
+    .category-item {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .search-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .categories h2 {
+        font-size: 22px;
+    }
+
+    .category-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .logo {
+        font-size: 18px;
+    }
+
+    .header nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .search-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .categories h2 {
+        font-size: 20px;
+    }
+
+    .category-item {
+        width: 100%;
+    }
+}

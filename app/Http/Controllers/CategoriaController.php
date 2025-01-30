@@ -12,8 +12,45 @@ class CategoriaController extends Controller
      */
     public function index()
     {
+        $categoria = [
+            'titulo' => 'Zendesk - Página Inicial',
+            'logo' => '../img/sis.png',
+            'botoes' => [
+                ['texto' => 'Cadastrar Artigo', 'link' => 'cadastro'],
+                ['texto' => 'Perfil', 'link' => 'perfil']
+            ],
+            'pesquisa' => [
+                'placeholder' => 'Pesquisar no Zendesk...'
+            ],
+            'categorias' => [
+                [
+                    'titulo' => 'Categoria 1',
+                    'imagem' => '../public/img/image.png',
+                    'descricao' => 'Este é um resumo da Categoria 1. Ele descreve brevemente o conteúdo ou objetivo dos artigos incluídos nesta categoria.',
+                    'link' => 'artigo'
+                ],
+                [
+                    'titulo' => 'Categoria 2',
+                    'imagem' => '../public/img/image.png',
+                    'descricao' => 'Este é um resumo da Categoria 2. Aqui você encontrará artigos relevantes sobre diversos tópicos interessantes.',
+                    'link' => 'artigo'
+                ],
+                [
+                    'titulo' => 'Categoria 3',
+                    'imagem' => '../public/img/image.png',
+                    'descricao' => 'Resumo da Categoria 3: descubra informações valiosas e insights exclusivos neste grupo de artigos.',
+                    'link' => 'artigo'
+                ],
+                [
+                    'titulo' => 'Categoria 4',
+                    'imagem' => '../public/img/image.png',
+                    'descricao' => 'Resumo da Categoria 4: conteúdo de qualidade com dicas práticas, estudos e análises aprofundadas.',
+                    'link' => 'artigo'
+                ]
+            ]
+        ];
 
-        return view('index');
+        return view('index', ['categoria' => $categoria]);
     }
 
     /**

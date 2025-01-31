@@ -1,6 +1,5 @@
 <?php
 
-//se trata da página perfil
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -8,59 +7,28 @@ use Illuminate\Http\Request;
 class PerfilController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Exibe a página de perfil do usuário.
      */
-    public function perfil()
+    public function show()
     {
+        $dadosPerfil = [
+            'titulo' => 'Perfil do Usuário',
+            'logo' => '../img/sis.png',
+            'botoes' => [
+                ['texto' => 'Cadastrar Artigo', 'link' => 'cadastro'],
+                ['texto' => 'Perfil', 'link' => 'perfil']
+            ],
+            'usuario' => [
+                'nome' => 'Gabriel Barbosa',
+                'cargo' => 'Jogador de futebol',
+                'email' => 'gabriel@gabigol.com',
+                'foto' => '../img/images.png',
+                'telefone' => '(11) 99999-9999',
+                'localizacao' => 'São Paulo, Brasil',
+                'data_criacao' => '2020-07-15'
+            ]
+        ];
 
-        return view('perfil');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('perfil', ['dadosPerfil' => $dadosPerfil]);
     }
 }

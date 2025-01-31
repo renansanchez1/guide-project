@@ -1,6 +1,5 @@
 <?php
 
-//se trata da página de cadastro
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -8,59 +7,28 @@ use Illuminate\Http\Request;
 class CadastroController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function cadastro()
-    {
-
-        return view('cadastro');
-    }
-
-    /**
-     * Show the form for creating a new resource.
+     * Exibe o formulário de cadastro de artigo.
      */
     public function create()
     {
-        //
-    }
+        $dadosCadastro = [
+            'titulo' => 'Cadastro de Artigo - Help Center',
+            'logo' => '../img/sis.png',
+            'botoes' => [
+                ['texto' => 'Cadastrar Artigo', 'link' => 'cadastro'],
+                ['texto' => 'Perfil', 'link' => 'perfil']
+            ],
+            'categorias' => [
+                ['valor' => 'categoria1', 'nome' => 'Categoria 1'],
+                ['valor' => 'categoria2', 'nome' => 'Categoria 2'],
+                ['valor' => 'categoria3', 'nome' => 'Categoria 3'],
+            ],
+            'status' => [
+                ['valor' => 'ativo', 'nome' => 'Ativo'],
+                ['valor' => 'inativo', 'nome' => 'Inativo']
+            ]
+        ];
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('cadastro', ['dadosCadastro' => $dadosCadastro]);
     }
 }

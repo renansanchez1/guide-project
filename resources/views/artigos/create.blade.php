@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- referente a página cadastro.php (rota / cadastro) -->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">

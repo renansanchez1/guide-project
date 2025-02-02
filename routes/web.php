@@ -13,11 +13,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Rotas para Categoria e Artigo
-Route::get('/index', [CategoriaController::class, 'index']);
+// Rotas para Artigo
 Route::get('/artigo', [ArtigoController::class, 'show'])->name('artigo');
-Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
+Route::get('/artigo/editar', [ArtigoController::class, 'edit'])->name('edit'); 
+// Route::get('/artigo/editar/{id}', [ArtigoController::class, 'edit'])->name('edit'); -> depois que adicionar os botões nos artigos
+Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro'); //rota antiga de /cadastro
+
+
+//perfil
 Route::get('/perfil', [PerfilController::class, 'show'])->name('perfil');
+
+//categoria
+Route::get('/index', [CategoriaController::class, 'index']);
 
 //Rotas de autenticação
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

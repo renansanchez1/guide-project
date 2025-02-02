@@ -37,6 +37,10 @@ class ArtigoController extends Controller
             ]
         ];
 
-        return view('artigo', ['artigo' => $artigo]);
+        return view('artigos.index', ['artigo' => $artigo]);
+    }
+
+    public function edit(/**string $id */){
+        return view('artigos.edit');
     }
 }

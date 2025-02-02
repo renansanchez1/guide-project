@@ -29,6 +29,6 @@ class CadastroController extends Controller
             ]
         ];
 
-        return view('cadastro', ['dadosCadastro' => $dadosCadastro]);
+        return view('artigos.create', ['dadosCadastro' => $dadosCadastro]);
     }
 }

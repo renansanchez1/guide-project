@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- referente a página artigo.php (rota /artigo)-->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">

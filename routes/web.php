@@ -14,7 +14,7 @@ Route::get('/', function () {
 });
 
 // Rotas para Artigo
-Route::get('/artigo', [ArtigoController::class, 'show'])->name('artigo');
+Route::get('/artigo/{id}', [ArtigoController::class, 'show'])->name('artigo');
 Route::get('/artigo/editar', [ArtigoController::class, 'edit'])->name('edit'); 
 // Route::get('/artigo/editar/{id}', [ArtigoController::class, 'edit'])->name('edit'); -> depois que adicionar os botões nos artigos
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro'); //rota antiga de /cadastro
